@@ -1,12 +1,17 @@
 name: Publish
 
 on:
-  push:
-    paths-ignore:
-      - 'docs/**'
-      - '*.md'
-    branches:
-      - master
+  workflow_dispatch:
+#   push:
+#     paths-ignore:
+#       - 'docs/**'
+#       - '*.md'
+#     branches:
+#       - master
+
+concurrency:
+   group: "${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}"
+   cancel-in-progress: true
 
 jobs:
   test:
