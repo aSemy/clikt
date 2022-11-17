@@ -47,7 +47,7 @@ cat >> docs/index.md <<- EOM
 EOM
 
 # Build and deploy the new site to github pages
-mkdocs gh-deploy
+mkdocs build
 
 # Remove the file copies
 rm docs/index.md docs/changelog.md
