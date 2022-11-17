@@ -35,8 +35,8 @@ jobs:
           python-version: 3.8
       - name: Build mkdocs
         run: |
-          pip3 install -r docs/requirements.txt
-          mkdocs build
+          pip install mkdocs mkdocs-material
+          ./deploy_website.sh
       
       - uses: actions/upload-pages-artifact@v1
         if: success()
