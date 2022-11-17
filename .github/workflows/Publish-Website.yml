@@ -33,9 +33,9 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: 3.8
-# pip3 install -r docs/requirements.txt
       - name: Build mkdocs
         run: |
+          pip3 install -r docs/requirements.txt
           mkdocs build
       
       - uses: actions/upload-pages-artifact@v1
